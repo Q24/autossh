@@ -1,22 +1,13 @@
 FROM alpine:latest
 
-ARG APPLICATION="myapp"
+ARG APPLICATION="autossh"
 ARG BUILD_RFC3339="1970-01-01T00:00:00Z"
 ARG REVISION="local"
 ARG DESCRIPTION="no description"
 ARG PACKAGE="user/repo"
 ARG VERSION="dirty"
 
-LABEL org.opencontainers.image.ref.name="${PACKAGE}" \
-  org.opencontainers.image.created=$BUILD_RFC3339 \
-  org.opencontainers.image.authors="Justin J. Novack <jnovack@gmail.com>" \
-  org.opencontainers.image.documentation="https://github.com/${PACKAGE}/README.md" \
-  org.opencontainers.image.description="${DESCRIPTION}" \
-  org.opencontainers.image.licenses="MIT" \
-  org.opencontainers.image.source="https://github.com/${PACKAGE}" \
-  org.opencontainers.image.revision=$REVISION \
-  org.opencontainers.image.version=$VERSION \
-  org.opencontainers.image.url="https://hub.docker.com/r/${PACKAGE}/"
+LABEL org.opencontainers.image.source="https://github.com/Q24/autossh"
 
 RUN \
   apk --no-cache add \
