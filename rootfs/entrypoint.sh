@@ -63,4 +63,4 @@ COMMAND="autossh "\
 echo "[INFO ] # ${COMMAND}"
 
 # Run command
-exec ${COMMAND}
+eval ${COMMAND}
