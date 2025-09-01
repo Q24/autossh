@@ -39,6 +39,11 @@ fi
 DEFAULT_PORT=$RANDOM
 let "DEFAULT_PORT += 32768"
 
+# Load options from file
+if [ -f /.env_ssh_options ]; then
+    source /.env_ssh_options
+fi
+
 # Determine command line flags
 
 # Log to stdout
